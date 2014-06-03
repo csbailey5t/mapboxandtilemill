@@ -85,15 +85,21 @@ Free accounts can choose between two baselayers: streets and terrain. Satellite 
 
 to select baselayer, go to style, then baselayer and click desired layer
 
+![Mapbox Baselayer](images/mapbox.baselayer.png)
+
 briefly address other things in style tab
 
-In order to add the new layer, click on data, then on the layers icon. Move the slider to layers.
+In order to add the new layer, click on data, then on the layers icon ![Layers Icon](images/mapbox.layer.icon.png). Move the slider to layers.
+
+![Layers Menu](images/mapbox.layer.png)
 
 click add layers, then select the name of the layer you created in TileMill
 
+click save
+
 Your layer will now appear on the map when it is zoomed within the range you specified in the TileMill export
 
-click save
+![Map with Layer](images/mapbox.withlayer.png)
 
 ### Using this map in Neatline
 
@@ -164,7 +170,13 @@ You'll notice that the sample file has four URLs, all the same with just the fir
 
 For each layer that you want to make available to in Neatline, you'll need to enter all four fields: "title," "id," "type," and properties. The sample file above specifies two layers which will be available within the Neatlight theme in Omeka. While each layer is being used in a different exhibit, both have to be specified within this one mapbox.json file.
 
-Once you save this file, you can begin using the layer in Neatline. You'll make the layer available through the "Exhibit Settings" of your exhibit. In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field.
+Once you save this file, you can begin using the layer in Neatline. You'll make the layer available through the "Exhibit Settings" of your exhibit.
+
+![Exhibit Options](images/neatline.exhibit.options.png)
+
+In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field.
+
+![Exhibit Settings](images/neatline.layers.png)
 
 Two considerations:
 
