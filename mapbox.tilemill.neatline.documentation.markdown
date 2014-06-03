@@ -39,10 +39,16 @@ Hit save and style
 
 Your GeoTIFF should now appear on the map
 
+![Map with Layer](images/tilemill.map.withlayer.png)
+
 To push a section of this map to MapBox
 
 hit the little arrow beside export in the upper right corner
 Select MBtiles (need to explain why tiles)
+
+![Export](images/tilemill.toexport.png)
+
+![Export Settings](images/tilemill.export.settings.png)
 
 Name
 Attribution - creator of map or data
@@ -67,7 +73,7 @@ First, we need to upload the layer that we've just created. In the data page of 
 
 After you've clicked upload, the file will appear in your list of data sources. It may take a few minutes for the file to processed. Once it is done processing it will be available to be used in a map. You will need to refresh the data page in order to update the processing status.
 
-## Creating a new project
+### Creating a new project
 
 in the projects page of mapbox, hit the create project button
 
@@ -87,7 +93,7 @@ Your layer will now appear on the map when it is zoomed within the range you spe
 
 click save
 
-## Using this map in Neatline
+### Using this map in Neatline
 
 Once the map is saved in Mapbox, it is available online and can be pulled into Neatline.
 
