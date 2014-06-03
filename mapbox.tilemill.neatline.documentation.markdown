@@ -79,6 +79,8 @@ in the projects page of mapbox, hit the create project button
 
 click on the project tab, then click on settings. Go ahead and give your project a name and description, then hit save.
 
+![Mapbox Project Info](images/mapbox.info.png)
+
 Free accounts can choose between two baselayers: streets and terrain. Satellite baselayer is only available to paid users
 
 to select baselayer, go to style, then baselayer and click desired layer
