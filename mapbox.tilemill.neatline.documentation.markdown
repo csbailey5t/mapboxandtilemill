@@ -11,13 +11,19 @@ These directions assume that you have a geo-referenced map, in this case a GeoTI
 Filename
 Default Data - Need to explain this?
 
-![TileMill New Project]()
+![TileMill New Project](images/tilemill.newproject.png)
 
 #### Default Editor screen
 
+![TileMill Whole Screen](images/tilemill.wholescreen.png)
+
 explain map on left, style.mss on right
 
-to add the GeoTIFF, click the layers icon (include small image)
+to add the GeoTIFF, click the layers icon ![Layers Icon](images/tilemill.layer.icon.png)
+
+*maybe use:* ![Layers Menu](images/tilemill.addlayer.png)
+
+![Layer Settings](images/tilemill.addlayer.fields.cropped.png)
 
 click add layer button
 
