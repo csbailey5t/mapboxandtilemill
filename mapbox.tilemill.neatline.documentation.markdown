@@ -34,35 +34,55 @@ Click "Add layer." Within the form that pops up, you will need to fill out sever
 
 For "Datasource", navigate to your GeoTIFF and hit done.
 
-For SRS (spatial reference system), TileMill requires GeoTIFFS to use the Google Web Mercator projection. If you don't know the SRS of your GeoTIFF, leave this field at "Autodetect" and TileMill may handle it for you. If it doesn't and you know the SRS, enter it in manually. With small GeoTIFFs, TileMill can render the file even if it is not projected to Google Web Mercator. With large GeoTIFFs, it is best to reproject the GeoTIFF to Google Web Mercator before adding it into TileMill. See TileMill's directions [here](https://www.mapbox.com/tilemill/docs/guides/reprojecting-geotiff/) on doing so with GDALwarp. 
+For SRS (spatial reference system), TileMill requires GeoTIFFS to use the Google Web Mercator projection. If you don't know the SRS of your GeoTIFF, leave this field at "Autodetect" and TileMill may handle it for you. If it doesn't and you know the SRS, enter it in manually. With small GeoTIFFs, TileMill can render the file even if it is not projected to Google Web Mercator. With large GeoTIFFs, it is best to reproject the GeoTIFF to Google Web Mercator before adding it into TileMill. See TileMill's directions [here](https://www.mapbox.com/tilemill/docs/guides/reprojecting-geotiff/) on doing so with GDALwarp.
 
 ![Layer Settings](images/tilemill.addlayer.fields.cropped.png)
 
-Hit save and style
-
-Your GeoTIFF should now appear on the map
+Hit "Save and Style" to return to the Editor. Your GeoTIFF should now appear on the map. If you wish to style the layer, use the ID or class you assigned to the layer as the selector within the style.mss file.
 
 ![Map with Layer](images/tilemill.map.withlayer.png)
 
-To push a section of this map to MapBox
+### Exporting to MapBox
 
-hit the little arrow beside export in the upper right corner
-Select MBtiles (need to explain why tiles)
+Mapbox has a built in export feature. If you want to only export a section of the map, and not include the background from the world map, you will need to edit the style.mss file. Remove the code for
+```
+Map {
+  background-color: #------
+}
+```
+and for:
+```
+#countries {
+  polygon-fill: #------
+}
+```
+If you do want to include the map background, which might be the case if you've imported multiple layers in, then proceed with the export.
+
+To export, click on the arrow beside "Export" in the upper right corner.
+Select "MBtiles." Using metatiles increases the efficiency and smoothness of a web map.
 
 ![Export](images/tilemill.toexport.png)
 
-![Export Settings](images/tilemill.export.settings.png)
+After selecting "MBTiles," you'll be presented with a set of options as well as the map itself. First, hold shift and drag to select the part of the map that you want to export. This sets the "Bounds" of the map. In the interest of file size, export the smallest amount of the map that you need/wish to use.
 
-Name
-Attribution - creator of map or data
-explain zoom - determines at which zoom levels these maptiles will appear
-center - click on map to reset center at whichever zoom level
-bounds - in the map pane, hold shift and drag to specify the section of the map that you wish to export
-metatile size - changing this can affect how large the output file is. default is 2, but you can increase this in order to decrease the file size
-click save settings to project if you wish to do so
+Fill out "Name," "Description," "Attribution," "Version," and "Filename" as desired.
+
+Zoom determines at which zoom levels these maptiles, and hence the map, will appear. For example, if you set the range between 6 and 10, then the exported map will only appear once a user has zoomed to level 6, and will disappear again past level 10. The zoom range significantly affects the file size of the exported map. In determining these values, keep in my how you intend to use the exported map and how much space you will have available to host it.
+
+Center sets the central position of the map, including the starting zoom level. To set this, zoom and pan to the view you want and click at the center of the map.
+
+Metatile size determines how many tiles will compose each metatile. Changing this value will affect the size of the output file. The default is 2, but you can increase this in order to decrease the file size. For more information on changing the metatile size, see the [TileMill documentation.](https://www.mapbox.com/tilemill/docs/guides/metatiles/)
+
+Click "Save settings to project" if you wish to use these same settings or modify them in the future for this project.
+
 Click export
 
+** A Note on File Size: ** 
+
+
 Write something about keeping the filesize small if using free mapbox (50MB upload storage)
+
+![Export Settings](images/tilemill.export.settings.png)
 
 If sucessful, your map will now be availab eat whichever location you have specified in your TileMill Settings.
 
