@@ -77,7 +77,7 @@ Click "Save settings to project" if you wish to use these same settings or modif
 
 Click "Export."
 
-** A Note on File Size: ** This tutorial assumes you will export this map to Mapbox to serve to Neatline. Mapbox has limits based on account type for data storage. For free accounts, you are allowed to have 50 MB of uploaded data. Depending on the resolution of your map, the bounds, zoom level, and metatile size, the size of the file could quickly exceed Mapbox's free limit. If you wish to use Mapbox and want larger storage, see their [paid plans.](https://www.mapbox.com/plans/)
+**A Note on File Size:** This tutorial assumes you will export this map to Mapbox to serve to Neatline. Mapbox has limits based on account type for data storage. For free accounts, you are allowed to have 50 MB of uploaded data. Depending on the resolution of your map, the bounds, zoom level, and metatile size, the size of the file could quickly exceed Mapbox's free limit. If you wish to use Mapbox and want larger storage, see their [paid plans.](https://www.mapbox.com/plans/)
 
 ![Export Settings](images/tilemill.export.settings.png)
 
@@ -89,20 +89,21 @@ You are now ready to import the tiles you've created into Mapbox.
 
 ### Uploading the MBtiles created in TileMill
 
-First, you need to upload the layer that you've just created. In the data page of your account, click upload data. Choose the file and click upload.
-After you've clicked upload, the file will appear in your list of data sources. It may take a few minutes for the file to processed. Once it is done processing it will be available to be used in a map. You will need to refresh the data page in order to update the processing status.
+First, you need to upload the layer that you've just created. In the "Data" page of your account, click "Upload data." Choose the file and click "Upload file." The file will appear in your list of data sources. It may take a few minutes for the file to processed. Once it is done processing it will be available to be used in a map. You will need to refresh the data page in order to update the processing status.
 
 ### Creating a new project
 
-in the projects page of mapbox, hit the create project button
+In the projects page of Mapbox, click the "Create project" button.
 
-click on the project tab, then click on settings. Go ahead and give your project a name and description, then hit save.
+Click on the "Project" tab, then click on "Settings." Give your project a name and description, then hit "Save."
 
 ![Mapbox Project Info](images/mapbox.info.name.png)
 
-Free accounts can choose between two baselayers: streets and terrain. Satellite baselayer is only available to paid users
+### Changing the baselayer
 
-to select baselayer, go to style, then baselayer and click desired layer
+Free accounts can choose between two baselayers: streets and terrain. The satellite baselayer is only available to paid users.
+
+To select a baselayer, go to the "Style" tab. Select "Baselayer" and click the desired layer. 
 
 ![Mapbox Baselayer](images/mapbox.baselayer.png)
 
