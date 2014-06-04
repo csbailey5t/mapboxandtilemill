@@ -6,34 +6,37 @@ Neatline has straight-forward, built-in support for using WMS servers and layers
 
 These directions assume that you have a geo-referenced map, in this case a GeoTIFF.
 
-#### Create new project - settings screen
+#### Create new project
 
-Filename
-Default Data - Need to explain this?
+To create a new project, click on the "Projects" tab in the left-side menu. From there, click the "New Project button." Within the "New Project" form, fill out "Filename," "Name," and "Description."
+
+For "Image Format," TileMill defaults to "png (24-bit)," which will provide high image quality. However, if you need to be more efficient with file size and storage, especially if hosting the map on Mapbox, you may wish to choose "png (8-bit)" or one of the jpeg options. The "Image Format" can always be changed later in the Project Settings.
+
+By default, TileMill includes a basic world layer as "Default Data." Uncheck this if you do not want this base layer. If you uncheck it, you will need to import your own base layer.  
 
 ![TileMill New Project](images/tilemill.newproject.png)
 
-#### Default Editor screen
+#### Editor Screen
+
+The Editor Screen in TileMill has two panes. On the left you'll see the map with standard map controls. On the right will be your style.mss sheet. TileMill uses a language called CartoCSS to style the map. You can find documentation on using this [here](https://www.mapbox.com/tilemill/docs/crashcourse/styling/).
 
 ![TileMill Whole Screen](images/tilemill.wholescreen.png)
 
-explain map on left, style.mss on right
+### Adding your GeoTIFF
 
-to add the GeoTIFF, click the layers icon ![Layers Icon](images/tilemill.layer.icon.png)
+To add the GeoTIFF, click the layers icon ![Layers Icon](images/tilemill.layer.icon.png) in the bottom left corner to bring up the layers panel.
 
-*maybe use:* ![Layers Menu](images/tilemill.addlayer.png)
+![Layers Menu](images/tilemill.addlayer.png)
+
+Click "Add layer." Within the form that pops up, you will need to fill out several fields.
+
+"ID" and "Class" are for use with CartoCSS to style the layer. You will need to provide at least one of these if you wish to make any changes to the style of your layer.
+
+For "Datasource", navigate to your GeoTIFF and hit done.
+
+For SRS (spatial reference system), TileMill requires GeoTIFFS to use the Google Web Mercator projection. If you don't know the SRS of your GeoTIFF, leave this field at "Autodetect" and TileMill may handle it for you. If it doesn't and you know the SRS, enter it in manually. With small GeoTIFFs, TileMill can render the file even if it is not projected to Google Web Mercator. With large GeoTIFFs, it is best to reproject the GeoTIFF to Google Web Mercator before adding it into TileMill. See TileMill's directions [here](https://www.mapbox.com/tilemill/docs/guides/reprojecting-geotiff/) on doing so with GDALwarp. 
 
 ![Layer Settings](images/tilemill.addlayer.fields.cropped.png)
-
-click add layer button
-
-for datasource, navigate to your GeoTIFF
-
-For SRS, TileMill may autodetect settings. If not, need to specify SRS. (Do we need to document how to determine this with GDALinfo?)
-
-if you want to style the layer you are creating, give it an id or class to be used in the mss file
-
-When working with GeoTIFFs, you may need to reproject your file to Google Web Mercator. TileMill docs have instructions on doing this with gdalwarp [here](https://www.mapbox.com/tilemill/docs/guides/reprojecting-GeoTIFF/).
 
 Hit save and style
 
