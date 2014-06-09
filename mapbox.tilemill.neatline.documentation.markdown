@@ -50,7 +50,7 @@ Map {
   background-color: #------
 }
 ```
-and for:
+and for
 ```
 #countries {
   polygon-fill: #------
@@ -67,11 +67,11 @@ After selecting "MBTiles," you'll be presented with a set of options as well as 
 
 Fill out "Name," "Description," "Attribution," "Version," and "Filename" as desired.
 
-Zoom determines at which zoom levels these maptiles, and hence the map, will appear. For example, if you set the range between 6 and 10, then the exported map will only appear once a user has zoomed to level 6, and will disappear again past level 10. The zoom range significantly affects the file size of the exported map. In determining these values, keep in my how you intend to use the exported map and how much space you will have available to host it.
+"Zoom" determines at which zoom levels these maptiles, and hence the map, will appear. For example, if you set the range between 6 and 10, then the exported map will only appear once a user has zoomed to level 6, and will disappear again past level 10. The zoom range significantly affects the file size of the exported map. In determining these values, keep in my how you intend to use the exported map and how much space you will have available to host it.
 
-Center sets the central position of the map, including the starting zoom level. To set this, zoom and pan to the view you want and click at the center of the map.
+"Center" sets the central position of the map, including the starting zoom level. To set this, zoom and pan to the view you want and click at the center of the map.
 
-Metatile size determines how many tiles will compose each metatile. Changing this value will affect the size of the output file. The default is 2, but you can increase this in order to decrease the file size. For more information on changing the metatile size, see the [TileMill documentation.](https://www.mapbox.com/tilemill/docs/guides/metatiles/)
+"MetaTile size" determines how many tiles will compose each metatile. Changing this value will affect the size of the output file. The default is 2, but you can increase this in order to decrease the file size. For more information on changing the metatile size, see the [TileMill documentation.](https://www.mapbox.com/tilemill/docs/guides/metatiles/)
 
 Click "Save settings to project" if you wish to use these same settings or modify them in the future for this project.
 
@@ -89,7 +89,7 @@ You are now ready to import the tiles you've created into Mapbox.
 
 ### Uploading the MBtiles created in TileMill
 
-First, you need to upload the layer that you've just created. In the "Data" page of your account, click "Upload data." Choose the file and click "Upload file." The file will appear in your list of data sources. It may take a few minutes for the file to processed. Once it is done processing it will be available to be used in a map. You will need to refresh the data page in order to update the processing status.
+First, you need to upload the layer that you've just created. In the "Data" page of your account, click "Upload data." Choose the file and click "Upload file." The file will appear in your list of data sources. It may take a few minutes for the file to be processed. Once it is done processing it will be available to be used in a map. You will need to refresh the data page in order to update the processing status.
 
 ### Creating a new project
 
@@ -123,9 +123,9 @@ Click "Add layers," then select the name of the layer. Click "Save." Your layer 
 
 Once the map is saved in Mapbox, it is available online and can be pulled into Neatline. In order to make the layer available to Neatline, you'll have to create a JSON file that tells Neatline where to find the layer.
 
-In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: <theme root>/neatline/layers/.
+In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: theme root/neatline/layers/.
 
-For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to <omeka folder>/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
+For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to: omeka folder/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
 
 Neatline will detect any layers specified in this file and make them available in exhibits.
 
