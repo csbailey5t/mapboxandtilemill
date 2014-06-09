@@ -123,13 +123,9 @@ Click "Add layers," then select the name of the layer. Click "Save." Your layer 
 
 Once the map is saved in Mapbox, it is available online and can be pulled into Neatline. In order to make the layer available to Neatline, you'll have to create a JSON file that tells Neatline where to find the layer.
 
-In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: themeroot/neatline/layers/.
+In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: themeroot/neatline/layers/. For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to: omekafolder/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself. Neatline will detect any layers specified in this file and make them available in exhibits.
 
-For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to: omekafolder/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
-
-Neatline will detect any layers specified in this file and make them available in exhibits.
-
-The mapbox.json file will look something like this:
+The mapbox.json file will look like this:
 
 ```
 {
@@ -176,11 +172,11 @@ For each layer you are including, you need a "title" for the layer. This will ap
 
 For the "id" you will need to enter the unique id of the map from Mapbox. You'll find this by going into your map in Mapbox, and going to the "Project" tab. In the "Info" tab, there is a "Map ID" field. The content of this field is the unique ID you'll put in the "id" field of your mapbox.json file.
 
-For "type", enter "XYZ". This is specifying the type of layer you are importing.
+For "type", enter "XYZ". This specifies the type of layer you are importing.
 
 For "properties", you'll be modifying the URL provided for your map by Mapbox. In the same tab where you found the Map ID, you'll find the URL in the "Share" field. Copy this over to your JSON file. You'll notice that the end of the URL is different than that shown in the same JSON file. The URL you're given will look like this: http://a.tiles.mapbox.com/v3/csbailey.idecmm92/page.html#6/38.805/-82.244.
 
-Within the mapbox.json file, delete everything in the link after the unique Map ID (everything from page.html onward). Replace that with "${z}/${x}/${y}.png".
+Within the mapbox.json file, delete everything in the link after the unique Map ID (everything from "page.html" onward). Replace that with "${z}/${x}/${y}.png".
 
 You'll notice that the sample file has four URLs, all the same with just the first letter after "http://" varying from 'a' to 'd.' All four URLs go to the same map, but this variation allows for faster speeds loading the map. However, the map will load just fine with only the one, original URL.
 
@@ -190,7 +186,7 @@ Once you save this file, you can begin using the layer in Neatline. You'll make 
 
 ![Exhibit Options](images/neatline.exhibit.options.png)
 
-In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field. Click "Save Exhibit" at the bottom of the page and the layer will now be appear in your Neatline exhibit.
+In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field. Click "Save Exhibit" at the bottom of the page and the layer will now appear in your Neatline exhibit.
 
 ![Exhibit Settings](images/neatline.layers.png)
 
