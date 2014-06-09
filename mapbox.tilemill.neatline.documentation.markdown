@@ -123,9 +123,9 @@ Click "Add layers," then select the name of the layer. Click "Save." Your layer 
 
 Once the map is saved in Mapbox, it is available online and can be pulled into Neatline. In order to make the layer available to Neatline, you'll have to create a JSON file that tells Neatline where to find the layer.
 
-In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: theme root/neatline/layers/.
+In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: themeroot/neatline/layers/.
 
-For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to: omeka folder/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
+For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to: omekafolder/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
 
 Neatline will detect any layers specified in this file and make them available in exhibits.
 
