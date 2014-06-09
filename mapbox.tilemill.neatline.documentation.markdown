@@ -44,7 +44,7 @@ Hit "Save and Style" to return to the Editor. Your GeoTIFF should now appear on 
 
 ### Exporting to MapBox
 
-Mapbox has a built in export feature. If you want to only export a section of the map, and not include the background from the world map, you will need to edit the style.mss file. Remove the code for
+TileMill has a built in export feature. If you want to only export a section of the map, and not include the background from the world map, you will need to edit the style.mss file. Remove the code for
 ```
 Map {
   background-color: #------
