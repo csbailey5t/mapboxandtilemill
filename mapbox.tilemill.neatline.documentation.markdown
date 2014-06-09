@@ -12,7 +12,7 @@ To create a new project, click on the "Projects" tab in the left-side menu. From
 
 For "Image Format," TileMill defaults to "png (24-bit)," which will provide high image quality. However, if you need to be more efficient with file size and storage, especially if hosting the map on Mapbox, you may wish to choose "png (8-bit)" or one of the jpeg options. The "Image Format" can always be changed later in the Project Settings.
 
-By default, TileMill includes a basic world layer as "Default Data." Uncheck this if you do not want this base layer. If you uncheck it, you will need to import your own base layer.  
+By default, TileMill includes a basic world layer as "Default Data." Uncheck this if you do not want this base layer. If you uncheck it, you will need to import your own base layer.
 
 ![TileMill New Project](images/tilemill.newproject.png)
 
@@ -103,31 +103,27 @@ Click on the "Project" tab, then click on "Settings." Give your project a name a
 
 Free accounts can choose between two baselayers: streets and terrain. The satellite baselayer is only available to paid users.
 
-To select a baselayer, go to the "Style" tab. Select "Baselayer" and click the desired layer. 
+To select a baselayer, go to the "Style" tab. Select "Baselayer" and click the desired layer.
 
 ![Mapbox Baselayer](images/mapbox.baselayer.png)
 
-briefly address other things in style tab
+The "Style" tab contains a number of other features allowing you to customize your map, changing colors of different features and hiding default layers. For help on this, see the [Mapbox Documentation.](https://www.mapbox.com/foundations/customizing-the-map/)
 
-In order to add the new layer, click on data, then on the layers icon ![Layers Icon](images/mapbox.layer.icon.png). Move the slider to layers.
+### Adding your layer from TileMill
+
+In order to add the layer you created in TileMill, click on "Data," then on the layers icon ![Layers Icon](images/mapbox.layer.icon.png). Move the slider to "layers."
 
 ![Layers Menu](images/mapbox.layer.png)
 
-click add layers, then select the name of the layer you created in TileMill
-
-click save
-
-Your layer will now appear on the map when it is zoomed within the range you specified in the TileMill export
+Click "Add layers," then select the name of the layer. Click "Save." Your layer will now appear on the map when it is zoomed within the range you specified in the TileMill export.
 
 ![Map with Layer](images/mapbox.withlayer.png)
 
 ### Using this map in Neatline
 
-Once the map is saved in Mapbox, it is available online and can be pulled into Neatline.
+Once the map is saved in Mapbox, it is available online and can be pulled into Neatline. In order to make the layer available to Neatline, you'll have to create a JSON file that tells Neatline where to find the layer.
 
-In order to make the layer available to Neatline, you'll have to create a JSON file that tells Neatline where to find the layer.
-
-create a file called mapbox.json in your favorite text editor. Save that file to the following location within your omeka installation: <theme root>/neatline/layers/.
+In your favorite text editor, create a file called mapbox.json. Save that file to the following location within your Omeka installation: <theme root>/neatline/layers/.
 
 For example, if I'm using the Neatlight theme for Omeka, I would save mapbox.json to <omeka folder>/themes/neatlight/neatline/layers/. You may need to create the layers folder yourself.
 
@@ -178,27 +174,27 @@ The JSON file has several pieces. First, "Mapbox: (Neatlight)" is the name of th
 
 For each layer you are including, you need a "title" for the layer. This will appear in the layer list in Neatline.
 
-For the "id" you will need to enter the unique id of the map from Mapbox. You'll find this by going into your map in Mapbox, and going to the "Project" tab. In the "Info" tab, there is a "Map ID" field. The contents of this field is the unique ID you'll put in the "id" field of your mapbox.json file.
+For the "id" you will need to enter the unique id of the map from Mapbox. You'll find this by going into your map in Mapbox, and going to the "Project" tab. In the "Info" tab, there is a "Map ID" field. The content of this field is the unique ID you'll put in the "id" field of your mapbox.json file.
 
-For "Type", enter "XYZ". This is specifying the type of layer you are importing.
+For "type", enter "XYZ". This is specifying the type of layer you are importing.
 
-For "properties", you'll be modifying the URL provided for your map by Mapbox. In the same tab where you found the Map ID, you'll find the URL in the "Share" field. Copy this over to your JSON file. You'll notice that the end of the URL is different than that shown in the same JSON file. The URL you're given will look like this: https://a.tiles.mapbox.com/v3/csbailey.idecmm92/page.html#6/38.805/-82.244
+For "properties", you'll be modifying the URL provided for your map by Mapbox. In the same tab where you found the Map ID, you'll find the URL in the "Share" field. Copy this over to your JSON file. You'll notice that the end of the URL is different than that shown in the same JSON file. The URL you're given will look like this: http://a.tiles.mapbox.com/v3/csbailey.idecmm92/page.html#6/38.805/-82.244.
 
 Within the mapbox.json file, delete everything in the link after the unique Map ID (everything from page.html onward). Replace that with "${z}/${x}/${y}.png".
 
-You'll notice that the sample file has four URLs, all the same with just the first letter after "http://" varying from 'a' to 'd.' All four URLs go to the same map, but this variation allows for faster speeds loading the map. However, the map will load just find with only the one, original URL.
+You'll notice that the sample file has four URLs, all the same with just the first letter after "http://" varying from 'a' to 'd.' All four URLs go to the same map, but this variation allows for faster speeds loading the map. However, the map will load just fine with only the one, original URL.
 
-For each layer that you want to make available to in Neatline, you'll need to enter all four fields: "title," "id," "type," and properties. The sample file above specifies two layers which will be available within the Neatlight theme in Omeka. While each layer is being used in a different exhibit, both have to be specified within this one mapbox.json file.
+For each layer that you want to make available in Neatline, you'll need to enter all four fields: "title," "id," "type," and "properties." The sample file above specifies two layers which will be available within the Neatlight theme in Omeka. While each layer is being used in a different exhibit, both have to be specified within this one mapbox.json file.
 
 Once you save this file, you can begin using the layer in Neatline. You'll make the layer available through the "Exhibit Settings" of your exhibit.
 
 ![Exhibit Options](images/neatline.exhibit.options.png)
 
-In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field.
+In the "Enabled Spatial Layers" field, scroll down and you'll see the name of the group of layers with each layer you specified below it. Select the layer you wish to enable for the exhibit. If you want that layer to be used as the default layer in the exhibit, select it as well for the "Default Spatial Layer" field. Click "Save Exhibit" at the bottom of the page and the layer will now be appear in your Neatline exhibit.
 
 ![Exhibit Settings](images/neatline.layers.png)
 
 Two considerations:
 
 - The "id" for each layer must be unique. If an "id" is repeated, Neatline won't break, but it will only use the last layer in the file with that "id."
-- Once a layer has been added and used in an exhibit, it is very difficult to change the "id." Neatline stores the "ids" as raw strings in the database, which mens that changing the values would have to be done by hand in the database.
+- Once a layer has been added and used in an exhibit, it is very difficult to change the "id." Neatline stores the "ids" as raw strings in the database, which means that changing the values would have to be done by hand in the database.
