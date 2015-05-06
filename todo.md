@@ -1,0 +1,3 @@
+- Link in Mapbox Education
+- Once it's up and running, link in Wayne's mapbox.json generator
+- Clarify tilemill vs mapbox studio
